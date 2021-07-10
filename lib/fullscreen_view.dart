@@ -254,7 +254,7 @@ class _FullScreenViewState extends State<FullScreenView> {
         SnackBar(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           content: Text(
-            'Image Saved in Downloads',
+            'Image Saved in Downloads, if not then kindly give permission',
             style: TextStyle(
               color: Theme.of(context).primaryColor,
             ),

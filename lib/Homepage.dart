@@ -183,13 +183,13 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  height: 40,
-                  width: MediaQuery.of(context).size.width * 0.4,
+                  height: 45,
+                  width: MediaQuery.of(context).size.width * 0.45,
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor.withOpacity(0.8),
                     borderRadius: BorderRadius.all(
                       Radius.circular(
-                        30,
+                        12,
                       ),
                     ),
                   ),

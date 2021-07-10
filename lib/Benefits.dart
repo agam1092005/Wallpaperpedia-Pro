@@ -310,7 +310,7 @@ class Benefits extends StatelessWidget {
                   height: 10,
                 ),
                 Container(
-                  height: 60,
+                  height: 80,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: (Theme.of(context).scaffoldBackgroundColor ==

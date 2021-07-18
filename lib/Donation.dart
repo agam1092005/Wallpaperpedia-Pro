@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:wallpaperpedia/rounded_button.dart';
 import 'Homepage.dart';
 
-class AboutUs extends StatelessWidget {
+class Donate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: non_constant_identifier_names
@@ -156,72 +159,92 @@ class AboutUs extends StatelessWidget {
           elevation: 0,
           title: brandName(),
         ),
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Container(
-                    height: 150,
-                    child: Image(
-                      fit: BoxFit.fill,
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Icon(
+                    Icons.favorite,
+                    size: 100,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  '"Those who are happiest are those who do the most for others."',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 16,
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  'Donate if you like my Work, So that i shall continue to make more Apps like this...',
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 25,
+                  ),
+                ),
+                Text(
+                  'Every Small donation counts :)',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'Continue with : ',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 25,
+                  ),
+                ),
+                Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
                       image: AssetImage(
-                        'images/logo.png',
+                        'images/paypal.png',
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Text(
-                    'by TechUtility - 2021',
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 12,
-                    ),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Text(
-                  'Build 1.0',
+                RoundedButton(
+                  onPressed: () {
+                    openurl();
+                  },
+                  height: 50,
+                  width: double.maxFinite,
+                  title: 'Proceed with PayPal',
                   style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontSize: 12,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                   ),
                 ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'I want to give a review !',
-                    style: TextStyle(
-                      fontSize: 10,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
+  }
+
+  openurl() {
+    String url = "https://www.paypal.com/paypalme/techutility";
+    launch(url);
   }
 }

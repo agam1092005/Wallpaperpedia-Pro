@@ -11,6 +11,7 @@ class Benefits extends StatelessWidget {
         children: <Widget>[
           Text(
             "Wallpaper",
+            textScaleFactor: 1,
             style: TextStyle(
               color: Theme.of(context).primaryColor,
               fontFamily: 'Overpass',
@@ -19,6 +20,7 @@ class Benefits extends StatelessWidget {
           ),
           Text(
             "pedia",
+            textScaleFactor: 1,
             style: TextStyle(
               color: Colors.blue,
               fontFamily: 'Overpass',
@@ -35,6 +37,7 @@ class Benefits extends StatelessWidget {
         children: <Widget>[
           Text(
             "Wallpaper",
+            textScaleFactor: 1,
             style: TextStyle(
               color: Theme.of(context).primaryColor,
               fontFamily: 'Overpass',
@@ -43,6 +46,7 @@ class Benefits extends StatelessWidget {
           ),
           Text(
             "pedia",
+            textScaleFactor: 1,
             style: TextStyle(
               color: Colors.blue,
               fontFamily: 'Overpass',
@@ -130,41 +134,6 @@ class Benefits extends StatelessWidget {
                               color: Theme.of(context).primaryColor,
                               fontSize: 26,
                             ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-                  child: Container(
-                    height: 60,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: (Theme.of(context).scaffoldBackgroundColor ==
-                              Color(0xFFFFFFFF)
-                          ? Color(0xFFd2d2d2)
-                          : Color(0xFF303030)),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          15,
-                        ),
-                      ),
-                    ),
-                    child: Center(
-                      child: ListTile(
-                        trailing: Icon(
-                          Icons.question_answer_outlined,
-                          size: 30,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                        title: Text(
-                          'About',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 26,
                           ),
                         ),
                       ),

@@ -76,6 +76,7 @@ class _HomePageState extends State<HomePage> {
       children: <Widget>[
         Text(
           "Wallpaper",
+          textScaleFactor: 1,
           style: TextStyle(
             color: Theme.of(context).primaryColor,
             fontFamily: 'Overpass',
@@ -84,6 +85,7 @@ class _HomePageState extends State<HomePage> {
         ),
         Text(
           "pedia",
+          textScaleFactor: 1,
           style: TextStyle(
             color: Colors.blue,
             fontFamily: 'Overpass',
@@ -101,6 +103,7 @@ class _HomePageState extends State<HomePage> {
       children: <Widget>[
         Text(
           "Wallpaper",
+          textScaleFactor: 1,
           style: TextStyle(
             color: Theme.of(context).primaryColor,
             fontFamily: 'Overpass',
@@ -109,6 +112,7 @@ class _HomePageState extends State<HomePage> {
         ),
         Text(
           "pedia",
+          textScaleFactor: 1,
           style: TextStyle(
             color: Colors.blue,
             fontFamily: 'Overpass',
@@ -176,6 +180,7 @@ class _HomePageState extends State<HomePage> {
                   child: Center(
                     child: Text(
                       'Load More',
+                      textScaleFactor: 1,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w900,

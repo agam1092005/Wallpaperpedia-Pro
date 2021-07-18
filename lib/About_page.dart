@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpaperpedia/Benefits.dart';
+import 'package:wallpaperpedia/Donation.dart';
 import 'about_us.dart';
 import 'Homepage.dart';
 import 'Source.dart';
@@ -8,7 +9,6 @@ import 'Source.dart';
 class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     // ignore: non_constant_identifier_names
     Widget DrawerbrandName() {
       return Row(
@@ -16,6 +16,7 @@ class About extends StatelessWidget {
         children: <Widget>[
           Text(
             "Wallpaper",
+            textScaleFactor: 1,
             style: TextStyle(
               color: Theme.of(context).primaryColor,
               fontFamily: 'Overpass',
@@ -24,6 +25,7 @@ class About extends StatelessWidget {
           ),
           Text(
             "pedia",
+            textScaleFactor: 1,
             style: TextStyle(
               color: Colors.blue,
               fontFamily: 'Overpass',
@@ -40,6 +42,7 @@ class About extends StatelessWidget {
         children: <Widget>[
           Text(
             "Wallpaper",
+            textScaleFactor: 1,
             style: TextStyle(
               color: Theme.of(context).primaryColor,
               fontFamily: 'Overpass',
@@ -48,6 +51,7 @@ class About extends StatelessWidget {
           ),
           Text(
             "pedia",
+            textScaleFactor: 1,
             style: TextStyle(
               color: Colors.blue,
               fontFamily: 'Overpass',
@@ -101,8 +105,7 @@ class About extends StatelessWidget {
                               child: child,
                             );
                           },
-                          pageBuilder:
-                              (context, animation, animationTime) {
+                          pageBuilder: (context, animation, animationTime) {
                             return HomePage();
                           },
                         ),
@@ -113,7 +116,7 @@ class About extends StatelessWidget {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: (Theme.of(context).scaffoldBackgroundColor ==
-                            Color(0xFFFFFFFF)
+                                Color(0xFFFFFFFF)
                             ? Color(0xFFd2d2d2)
                             : Color(0xFF303030)),
                         borderRadius: BorderRadius.all(
@@ -142,41 +145,6 @@ class About extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-                  child: Container(
-                    height: 60,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: (Theme.of(context).scaffoldBackgroundColor ==
-                          Color(0xFFFFFFFF)
-                          ? Color(0xFFd2d2d2)
-                          : Color(0xFF303030)),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          15,
-                        ),
-                      ),
-                    ),
-                    child: Center(
-                      child: ListTile(
-                        trailing: Icon(
-                          Icons.question_answer_outlined,
-                          size: 30,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                        title: Text(
-                          'About',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 26,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
                 SizedBox(
                   height: 40,
                 ),
@@ -193,176 +161,227 @@ class About extends StatelessWidget {
           title: brandName(),
         ),
         body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            child: Column(
-              children: [
-                Image.asset('images/about.png'),
-                SizedBox(
-                  height: 20,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      PageRouteBuilder(
-                        transitionsBuilder:
-                            (context, animation, animationTime, child) {
-                          return FadeTransition(
-                            opacity: animation,
-                            child: child,
-                          );
-                        },
-                        pageBuilder: (context, animation, animationTime) {
-                          return AboutUs();
-                        },
-                      ),
-                    );
-                  },
-                  child: Container(
-                    height: 60,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: (Theme.of(context).scaffoldBackgroundColor ==
-                              Color(0xFFFFFFFF)
-                          ? Color(0xFFd2d2d2)
-                          : Color(0xFF303030)),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          15,
-                        ),
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Image.asset('images/about.png'),
+              SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      transitionsBuilder:
+                          (context, animation, animationTime, child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      },
+                      pageBuilder: (context, animation, animationTime) {
+                        return AboutUs();
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 60,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: (Theme.of(context).scaffoldBackgroundColor ==
+                            Color(0xFFFFFFFF)
+                        ? Color(0xFFd2d2d2)
+                        : Color(0xFF303030)),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        15,
                       ),
                     ),
-                    child: Center(
-                      child: ListTile(
-                        trailing: Icon(
-                          Icons.engineering_outlined,
-                          size: 30,
+                  ),
+                  child: Center(
+                    child: ListTile(
+                      trailing: Icon(
+                        Icons.engineering_outlined,
+                        size: 30,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      title: Text(
+                        'About',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
                           color: Theme.of(context).primaryColor,
-                        ),
-                        title: Text(
-                          'About Us',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 26,
-                          ),
+                          fontSize: 26,
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      PageRouteBuilder(
-                        transitionsBuilder:
-                            (context, animation, animationTime, child) {
-                          return FadeTransition(
-                            opacity: animation,
-                            child: child,
-                          );
-                        },
-                        pageBuilder: (context, animation, animationTime) {
-                          return Source();
-                        },
-                      ),
-                    );
-                  },
-                  child: Container(
-                    height: 60,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: (Theme.of(context).scaffoldBackgroundColor ==
-                              Color(0xFFFFFFFF)
-                          ? Color(0xFFd2d2d2)
-                          : Color(0xFF303030)),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          15,
-                        ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      transitionsBuilder:
+                          (context, animation, animationTime, child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      },
+                      pageBuilder: (context, animation, animationTime) {
+                        return Source();
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 60,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: (Theme.of(context).scaffoldBackgroundColor ==
+                            Color(0xFFFFFFFF)
+                        ? Color(0xFFd2d2d2)
+                        : Color(0xFF303030)),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        15,
                       ),
                     ),
-                    child: Center(
-                      child: ListTile(
-                        trailing: Icon(
-                          Icons.info_outline,
-                          size: 30,
+                  ),
+                  child: Center(
+                    child: ListTile(
+                      trailing: Icon(
+                        Icons.info_outline,
+                        size: 30,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      title: Text(
+                        'Source',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
                           color: Theme.of(context).primaryColor,
-                        ),
-                        title: Text(
-                          'Source',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 26,
-                          ),
+                          fontSize: 26,
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      PageRouteBuilder(
-                        transitionsBuilder:
-                            (context, animation, animationTime, child) {
-                          return FadeTransition(
-                            opacity: animation,
-                            child: child,
-                          );
-                        },
-                        pageBuilder: (context, animation, animationTime) {
-                          return Benefits();
-                        },
-                      ),
-                    );
-                  },
-                  child: Container(
-                    height: 60,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: (Theme.of(context).scaffoldBackgroundColor ==
-                          Color(0xFFFFFFFF)
-                          ? Color(0xFFd2d2d2)
-                          : Color(0xFF303030)),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          15,
-                        ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      transitionsBuilder:
+                          (context, animation, animationTime, child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      },
+                      pageBuilder: (context, animation, animationTime) {
+                        return Benefits();
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 60,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: (Theme.of(context).scaffoldBackgroundColor ==
+                            Color(0xFFFFFFFF)
+                        ? Color(0xFFd2d2d2)
+                        : Color(0xFF303030)),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        15,
                       ),
                     ),
-                    child: Center(
-                      child: ListTile(
-                        trailing: Icon(
-                          Icons.card_giftcard_outlined,
-                          size: 30,
+                  ),
+                  child: Center(
+                    child: ListTile(
+                      trailing: Icon(
+                        Icons.card_giftcard_outlined,
+                        size: 30,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      title: Text(
+                        'Benefits',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
                           color: Theme.of(context).primaryColor,
-                        ),
-                        title: Text(
-                          'Benefits',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 26,
-                          ),
+                          fontSize: 26,
                         ),
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      transitionsBuilder:
+                          (context, animation, animationTime, child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      },
+                      pageBuilder: (context, animation, animationTime) {
+                        return Donate();
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 60,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: (Theme.of(context).scaffoldBackgroundColor ==
+                            Color(0xFFFFFFFF)
+                        ? Color(0xFFd2d2d2)
+                        : Color(0xFF303030)),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        15,
+                      ),
+                    ),
+                  ),
+                  child: Center(
+                    child: ListTile(
+                      trailing: Icon(
+                        Icons.favorite_border_outlined,
+                        size: 30,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      title: Text(
+                        'Donate',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 26,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

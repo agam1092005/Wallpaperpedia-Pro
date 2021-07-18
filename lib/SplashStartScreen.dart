@@ -49,6 +49,7 @@ class _SplashStartScreenState extends State<SplashStartScreen> {
                   children: <Widget>[
                     Text(
                       "Wallpaper",
+                      textScaleFactor: 1,
                       style: TextStyle(
                         fontSize: 30,
                         color: Theme.of(context).primaryColor,
@@ -58,6 +59,7 @@ class _SplashStartScreenState extends State<SplashStartScreen> {
                     ),
                     Text(
                       "pedia",
+                      textScaleFactor: 1,
                       style: TextStyle(
                         fontSize: 30,
                         color: Colors.blue,

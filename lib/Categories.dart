@@ -74,6 +74,7 @@ class _CategoriesState extends State<Categories> {
       children: <Widget>[
         Text(
           "Wallpaper",
+          textScaleFactor: 1,
           style: TextStyle(
             color: Theme.of(context).primaryColor,
             fontFamily: 'Overpass',
@@ -82,6 +83,7 @@ class _CategoriesState extends State<Categories> {
         ),
         Text(
           "pedia",
+          textScaleFactor: 1,
           style: TextStyle(
             color: Colors.blue,
             fontFamily: 'Overpass',
@@ -98,6 +100,7 @@ class _CategoriesState extends State<Categories> {
       children: <Widget>[
         Text(
           "Wallpaper",
+          textScaleFactor: 1,
           style: TextStyle(
             color: Theme.of(context).primaryColor,
             fontFamily: 'Overpass',
@@ -106,6 +109,7 @@ class _CategoriesState extends State<Categories> {
         ),
         Text(
           "pedia",
+          textScaleFactor: 1,
           style: TextStyle(
             color: Colors.blue,
             fontFamily: 'Overpass',
@@ -277,6 +281,7 @@ class _CategoriesState extends State<Categories> {
                   child: Center(
                     child: Text(
                       'Load More',
+                      textScaleFactor: 1,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w900,
@@ -284,13 +289,13 @@ class _CategoriesState extends State<Categories> {
                       ),
                     ),
                   ),
-                  height: 40,
-                  width: MediaQuery.of(context).size.width * 0.4,
+                  height: 45,
+                  width: MediaQuery.of(context).size.width * 0.45,
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor.withOpacity(0.8),
                     borderRadius: BorderRadius.all(
                       Radius.circular(
-                        30,
+                        12,
                       ),
                     ),
                   ),
